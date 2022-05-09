@@ -1,0 +1,188 @@
+@import "lib/vars.css";
+@import "lib/mixins.css";
+@import "lib/fontface.css";
+
+* {
+  //border: 1px solid tomato;
+}
+
+html,
+body {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: #333;
+  background: linear-gradient(
+    90deg,
+    hsla(64, 41%, 92%, 0.5) 0%,
+    hsla(196, 83%, 84%, 0.5) 50%,
+    hsla(305, 75%, 83%, 0.5) 100%
+  );
+  min-height: 100vh;
+  font-family: $font_family_base;
+  @apply py-12;
+}
+
+.pokemon_finder {
+  @apply w-[650px] mr-auto ml-auto  p-12  rounded-2xl;
+
+  .search_holder {
+    @apply flex items-center justify-between p-4 mt-12 rounded-xl;
+    background: linear-gradient(
+      90deg,
+      hsla(205, 46%, 10%, 1) 0%,
+      hsla(191, 28%, 23%, 1) 50%,
+      hsla(207, 41%, 27%, 1) 100%
+    );
+    form {
+      @apply flex items-center justify-between p-4 w-full;
+      input {
+        @apply w-full p-1 pl-4 pr-4 rounded-md bg-gray-200;
+      }
+      button {
+        @apply bg-red-400 rounded-md m-2;
+        span {
+          @apply flex items-center justify-center p-1 pr-4 pl-4 text-white;
+        }
+        &.send {
+          @apply bg-blue-400 rounded-md m-2;
+          span {
+            @apply text-white;
+          }
+        }
+      }
+    }
+  }
+  .pokemon_holder {
+    @apply flex flex-col mt-8;
+    .pokemon_searched {
+      @apply flex flex-col pt-4 rounded-xl rounded-b-none;
+      background: linear-gradient(
+        90deg,
+        hsla(205, 46%, 10%, 1) 0%,
+        hsla(191, 28%, 23%, 1) 50%,
+        hsla(207, 41%, 27%, 1) 100%
+      );
+      .pokemon_pic_holder {
+        @apply flex justify-center;
+        img {
+          @apply w-[175px] bg-white rounded-xl mb-8;
+        }
+      }
+      .pokemon_info {
+        @apply flex flex-col justify-center items-center bg-slate-100 p-4 rounded-xl rounded-b-none;
+        .pokemon_name {
+          @apply w-auto flex justify-center;
+          h1 {
+            @apply text-xl font-bold;
+          }
+        }
+        .meta_info {
+          @apply flex flex-col justify-center p-4 w-[400px] rounded-xl;
+          .class {
+            @apply flex justify-center w-full rounded-md;
+            background: linear-gradient(
+              90deg,
+              hsla(40, 94%, 74%, 1) 0%,
+              hsla(60, 89%, 72%, 1) 100%
+            );
+          }
+          .attacks {
+            @apply flex items-center w-full mt-2 p-4 ;
+            background: linear-gradient(
+              90deg,
+              hsla(64, 41%, 92%, 0.5) 0%,
+              hsla(196, 83%, 84%, 0.5) 50%,
+              hsla(305, 75%, 83%, 0.5) 100%
+            );
+            ul {
+              @apply flex flex-wrap justify-between;
+              .attack {
+                @apply flex items-center justify-center w-[150px] m-1 bg-white;
+                @apply rounded-md p-2;
+              }
+            }
+          }
+        }
+      }
+    }
+    .previous_searchs {
+      @apply flex flex-col mt-8;
+
+      h1 {
+        @apply flex justify-center mb-4 bg-white w-full rounded-xl py-2;
+        @apply font-bold text-xl;
+      }
+      .searchs_holder {
+        @apply flex flex-col-reverse justify-center items-center;
+        .pokemon_card {
+          @apply flex items-center justify-center p-4 w-full rounded-xl rounded-r-none m-2;
+          background: linear-gradient(
+            90deg,
+            hsla(208, 33%, 21%, 1) 0%,
+            hsla(211, 36%, 46%, 1) 100%
+          );
+          .pokemon_pic {
+            @apply flex items-center justify-center p-4 w-[200px];
+            .pic_holder {
+              img {
+                @apply bg-white rounded-md w-[100px];
+              }
+            }
+          }
+          .pokemon_info {
+            @apply flex flex-col p-4 bg-white rounded-xl;
+            .name {
+              @apply flex justify-between items-center p-4;
+              h2 {
+                @apply flex justify-center items-center w-[200px];
+                @apply font-bold;
+              }
+              .pokemon_class {
+                @apply flex justify-center items-center min-w-[100px];
+                background: linear-gradient(
+                  90deg,
+                  hsla(40, 94%, 74%, 1) 0%,
+                  hsla(60, 89%, 72%, 1) 100%
+                );
+
+                @apply rounded-md p-2;
+              }
+            }
+            .attacks {
+              @apply flex items-center w-full p-4;
+              background: linear-gradient(
+                90deg,
+                hsla(64, 41%, 92%, 0.75) 0%,
+                hsla(196, 83%, 84%, 0.75) 50%,
+                hsla(305, 75%, 83%, 0.75) 100%
+              );
+              ul {
+                @apply flex flex-wrap justify-between;
+                .attack {
+                  @apply flex justify-center items-center w-[125px] m-1 bg-white;
+                  @apply rounded-md p-1;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.loader {
+  background: linear-gradient(
+    90deg,
+    hsla(341, 94%, 49%, 0.7) 0%,
+    rgba(249, 172, 144, 0.7) 70%
+  );
+
+  .loader_holder {
+    @apply bg-white py-6 px-4 w-auto;
+    @apply rounded-md flex items-center justify-center;
+    span {
+      @apply ml-2 font-bold text-red-500;
+    }
+  }
+}

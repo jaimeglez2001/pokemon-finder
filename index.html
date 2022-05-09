@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <title>vitejs_boiler</title>
+  </head>
+  <body>
+
+
+
+
+    <div class="pokemon_finder">
+      <header>
+        <div class="logo"><img src="assets/images/logo.png" ></div>
+      </header>
+
+      <div class="alert w-[600px] mx-auto my-4 bg-gray-200 border-l-8 border-red-500 p-4 hidden">
+        <p>El pokemon no existe</p>
+        <button class="reset_list">Resetear</button>
+      </div>
+      <div class="loader fixed top-0 left-0 w-full h-full  bg-opacity-70 flex justify-center items-center hidden">
+        <div class="loader_holder">
+          <i class="ph-circle-notch-bold"></i><span>Loading...</span>
+        </div>
+      </div>
+
+      
+      <div class="search_holder">
+        <form>
+          <input type="text" placeholder="Pikachu...">     
+          <button class="send"><span>Enviar</span></button>
+        </form>
+      </div>
+      <div class="pokemon_holder">
+        <div class="pokemon_searched">
+          <div class="pokemon_pic_holder">
+            <img src="">img
+          </div>
+          <div class="pokemon_info">
+            <div class="pokemon_name">
+              <h1>Name</h1>
+            </div>
+            <div class="meta_info">
+              <div class="class">
+               fuego
+              </div>
+              <div class="attacks">
+                <ul>
+                  <li class="attack">ataque rapido</li>
+                  <li class="attack">placaje</li>
+                  <li class="attack">finta</li>
+                  <li class="attack">pantalla humo</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="previous_searchs">
+         <h1>Buscado anteriormente...</h1>
+         <div class="searchs_holder">
+           <div class="pokemon_card">
+             <div class="pokemon_pic">
+               <div class="pic_holder">
+                 <img src="">img
+               </div>
+             </div>
+             <div class="pokemon_info">
+               <div class="name">
+                 <h2>name</h2>
+                 <div class="pokemon_class">fuego</div>
+               </div>
+               <div class="attacks">
+                 <ul>
+                   <li class="attack">ataque rapido</li>
+                   <li class="attack">placaje</li>
+                   <li class="attack">finta</li>
+                   <li class="attack">pantalla humo</li>
+                 </ul>
+               </div>
+             </div>
+           </div>
+         </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="/app/main.js"></script>
+  </body>
+</html>
